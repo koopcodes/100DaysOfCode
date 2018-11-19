@@ -20,11 +20,11 @@ function roundIt(num) {
 
 function roundIt(num) {
 	let [leftDigits, rightDigits] = num
-			.toString()
-			.split('.')
-			.map((section) => section.length),
-		diff = leftDigits - rightDigits,
-		magic = diff < 0 ? Math.ceil : diff > 0 ? Math.floor : Math.round;
+		.toString()
+		.split('.')
+		.map((section) => section.length);
+	diff = leftDigits - rightDigits;
+	magic = diff < 0 ? Math.ceil : diff > 0 ? Math.floor : Math.round;
 	return magic(num);
 }
 // ------------------------------------------------------------------
