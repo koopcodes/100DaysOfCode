@@ -11,7 +11,7 @@ function rndCode(openRange, closeRange, num) {
 	let codes = [];
 	for (i = 0; i < num; i++) {
 		let concat = [];
-		codes[num] = openArray[~~ (10*Math.random())];
+		codes[num] = openArray[~~(10 * Math.random())];
 		// concat[(6, 7)] = closeArray[Math.random()];
 		// concat[(2, 3, 4, 5)] = ~~Math.random(0, 9);
 		// codes[i] = concat.join();
