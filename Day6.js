@@ -23,3 +23,5 @@ function countAnimals2(animals, count) {
 		(animal) => (animals.match(new RegExp(animal, 'g')) || []).length
 	);
 }
+
+var regex=/^-?9.*0000$/
