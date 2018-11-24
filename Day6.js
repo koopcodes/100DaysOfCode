@@ -6,18 +6,20 @@
 var countAnimals = (animals, count) => {
 	var numArr = [];
 	for (var r of count) {
-    var find = animals.match(new RegExp(r, 'g'));
-    if (find != null) {
-		  numArr.push(find.length);
-    } else numArr.push(0);
+		var find = animals.match(new RegExp(r, 'g'));
+		if (find != null) {
+			numArr.push(find.length);
+		} else numArr.push(0);
 	}
-	return (numArr);
+	return numArr;
 };
 
 countAnimals('dog,cat,dog', ['dog', 'cat', 'pig', 'fox']);
 
 ///// OR /////
 
-function countAnimals2(animals,count){
-  return count.map(animal => (animals.match(new RegExp(animal, "g")) || []).length);
+function countAnimals2(animals, count) {
+	return count.map(
+		(animal) => (animals.match(new RegExp(animal, 'g')) || []).length
+	);
 }
