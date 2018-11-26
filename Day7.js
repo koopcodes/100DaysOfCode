@@ -33,4 +33,4 @@ console.log(str.replace(/[^!@#$%]/g, '')); //output: !@#$%
 // 4) Ignore case, and a string may contain multiple URLs
 // 5) Your regular expression name should be `regex` and your result should be a string array
 
-var regex=/ /
+var regex= /https?:\/\/[a-z0-9.]+\.(?:com|net)/gi
