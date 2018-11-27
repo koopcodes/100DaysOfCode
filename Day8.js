@@ -33,16 +33,20 @@ function min2(numArray, toReturn) {
 function sumDigPow(start, end) {
 	coll = [];
 	for (var i = start; i < end; i++) {
-		var digits = i.toString(10).split('').map(Number);
-		for (var j = 0; j < digits.length; i++) {
-			total = +Math.pow(digits[j], j + 1);
-    }
-    if (total === i ){
-    coll.push(total);
-    }
-    console.log(coll);
-    return coll;
+		total = 0;
+		var digits = i
+			.toString(10)
+			.split('')
+			.map(Number);
+		for (var j = 0; j < digits.length; j++) {
+			total = total + Math.pow(digits[j], j + 1);
+		}
+		if (total === i) {
+			coll.push(total);
+		}
 	}
+	console.log(coll);
+	return coll;
 }
 
-sumDigPow(1, 10);
+sumDigPow(1, 1000);
