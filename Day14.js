@@ -2,7 +2,6 @@
 
 function persistence(num) {
 	var iterations = 0;
-	var length = num.toString().length;
 	var digits = num
 		.toString(10)
 		.split('')
@@ -13,17 +12,16 @@ function persistence(num) {
   function multiply(digits, iterations) {
 		iterations = iterations + 1;
 		var sum = 1;
-		for (i = 0; i < length; i++) {
+		for (i = 0; i < digits.length; i++) {
 			sum = sum * digits[i];
-			console.log('Sum: ', sum);
 		}
-		if (length === 1) {
+		if (sum.toString().length === 1) {
       console.log(iterations);
 			return iterations;
 		} else {
-			multiply(sum, iterations);
+      multiply(sum.toString(10).split('').map(Number), iterations);
 		}
-	}
+  }
 }
 
-persistence(553);
+persistence(999);
