@@ -29,6 +29,11 @@ function min2(numArray, toReturn) {
 }
 
 //////////////////////////////////////////////////////
+// Find numbers equal to the sum its digits raised the power of it's string position
+// 89 = 8^1 + 9^2
+// 135 = 1^1 + 3^2 + 5^3
+// 175 = 1^1 + 7^2 + 5^3
+
 
 function sumDigPow(start, end) {
 	coll = [];
