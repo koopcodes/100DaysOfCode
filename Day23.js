@@ -2,17 +2,20 @@
 // There will always be only one integer that appears an odd number of times
 
 function findOdd(A) {
-	const distribution = A.reduce(
+  this.key;
+	const searchArray = A.reduce(
 		(acum, cur) => Object.assign(acum, { [cur]: (acum[cur] | 0) + 1 }),
 		{}
 	);
-	for (var acum in distribution) {
-		if (distribution.hasOwnProperty(acum) % 2 === 1) {
-			console.log(acum);
-		}
-	}
-	//   console.log(JSON.stringify(distribution,null,2));
-	//   return JSON.stringify(distribution,null,2);
+
+	Object.keys(searchArray).forEach(function(key) {
+		var value = searchArray[key];
+		if (value % 2 === 1) {
+      this.key = key;
+			}
+  });
+  console.log(this.key);
+  return this.key;
 }
 
-findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]);
+findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]); // 5
