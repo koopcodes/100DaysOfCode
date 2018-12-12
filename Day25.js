@@ -6,19 +6,22 @@
 // rgb(148, 0, 211) // returns 9400D3
 
 function rgb(r, g, b) {
-  const rHex = decimalToHex(clamp(r));
-  const gHex = decimalToHex(clamp(g));
-  const bHex = decimalToHex(clamp(b));
-  console.log(rHex+gHex+bHex);
-  return (rHex+gHex+bHex);
+	const rHex = decimalToHex(clamp(r));
+	const gHex = decimalToHex(clamp(g));
+	const bHex = decimalToHex(clamp(b));
+	console.log(rHex + gHex + bHex);
+	return rHex + gHex + bHex;
 }
 
 function decimalToHex(decimal) {
-	return (decimal+0x10000).toString(16).substr(-2).toUpperCase();
+	return (decimal + 0x10000)
+		.toString(16)
+		.substr(-2)
+		.toUpperCase();
 }
 
 function clamp(decimal) {
-  return Math.min(255, Math.max(0, decimal));
+	return Math.min(255, Math.max(0, decimal));
 }
 
 rgb(255, 255, 300);
