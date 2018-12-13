@@ -35,5 +35,34 @@ rgb(255, 255, 300);
 // list_squared(42, 250) --> [[42, 2500], [246, 84100]]
 
 function listSquared(m, n) {
-  // your code
+	var result = [];
+	for (i = m; i <= n; i++) {
+		var sum = 0;
+		var squareFactors = getFactors(i);
+		for (j = 0; j < squareFactors.length; j++) {
+			squareFactors[j] = Math.pow(squareFactors[j], 2);
+		}
+		sum = squareFactors.reduce((a, b) => a+b, 0);
+		if (Math.sqrt(sum) % 1 === 0) {
+			result.push([i, sum]);
+		}
+	}
+
+  console.log(result);
+  return result;
+
+	function getFactors(integer) {
+		var factors = [];
+		var quotient = 0;
+		for (var i = 1; i <= integer; i++) {
+			quotient = integer / i;
+
+			if (quotient === Math.floor(quotient)) {
+				factors.push(i);
+			}
+		}
+		return factors;
+	}
 }
+
+listSquared(1, 250);
