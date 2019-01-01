@@ -11,8 +11,31 @@
 // Don't modify the input
 
 function orderWeight(strng) {
-  // your code
+	var newArray = [];
+	var weightArray = strng.split(' ').filter(function(str) {
+		// Remove whitespaces and create array
+		return /\S/.test(str);
+	});
+	for (i = 0; i < weightArray.length; i++) {
+		var digits = weightArray[i]
+			.toString(10)
+			.split('') // For each element in the array:
+			.map(Number); // Convert string array elements to numbers
+		var sum = digits.reduce((total, number) => total + number); // Sum the numbers
+		newArray.push([weightArray[i], sum]);
+  }
+  newArray.sort(function(a, b) {
+		return a[0] - b[0];
+	});
+	newArray.sort(function(a, b) {
+		return a[1] - b[1];
+	});
+	var finalRank = '';
+	for (i = 0; i < newArray.length; i++) {
+		finalRank = finalRank + newArray[i][0] + ' ';
+	}
+	console.log(finalRank.trim());
+	return finalRank.trim();
 }
 
-orderWeight("103 123 4444 99 2000"); // "2000 103 123 4444 99"
-orderWeight("2000 10003 1234000 44444444 9999 11 11 22 123"); // "11 11 2000 10003 22 123 1234000 44444444 9999"
+orderWeight('2000 10003 1234000 44444444 9999 11 11 22 123'); // "11 11 2000 10003 22 123 1234000 44444444 9999"
