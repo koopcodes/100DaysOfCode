@@ -28,4 +28,4 @@ function rot13(message){
   return message.split('').map(translate).join('');
 }
 
-rot13('Happy New Year!!'); // Unccl Arj Lrne!!
+rot13('Happy New Year!!'); // 'Unccl Arj Lrne!!'
