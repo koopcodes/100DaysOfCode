@@ -14,6 +14,7 @@ function persistence(num) {
 		}
 
 		if (length === 1) {
+			console.log(iterations);
 			return iterations;
 		} else {
 			multiply(sum);

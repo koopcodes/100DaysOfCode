@@ -6,10 +6,11 @@
 var shuffleIt = (arr, ...indicies) => {
 	for (i = 0; i < indicies.length; i++) {
 		var [a, b] = indicies[i];
-		var c = arr[b];
+		var c = arr[b]; // Swap array element b with element a
 		arr[(a, b)] = arr[(b, a)];
 		arr[a] = c;
 	}
+	console.log(arr);
 	return arr;
 };
 
@@ -17,7 +18,7 @@ shuffleIt([1, 9, 2, 8, 3, 7, 4, 6, 5], [0, 8], [1, 7], [2, 6], [3, 5]);
 
 ///// OR /////
 
-var shuffleIt2=(arr,...ex)=>{
-  for ([a,b] of ex) [arr[a],arr[b]]=[arr[b],arr[a]];
-  return arr;
-}
+var shuffleIt2 = (arr, ...ex) => {
+	for ([a, b] of ex) [arr[a], arr[b]] = [arr[b], arr[a]];
+	return arr;
+};

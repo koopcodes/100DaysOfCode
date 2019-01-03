@@ -4,7 +4,6 @@
 // It’s guaranteed that array contains more than 3 numbers
 
 function findUniq(arr) {
-  console.log(arr);
   console.log(arr.filter(function(value){
     return arr.indexOf(value) === arr.lastIndexOf(value);
   })[0] || -1);
@@ -14,4 +13,4 @@ function findUniq(arr) {
   })[0] || -1;
 }
 
-findUniq([ 0, 1, 1, 1, 1, 1, 1, 1 ]); // 10
+findUniq([ 10, 1, 1, 1, 1, 1, 1, 1 ]); // 10

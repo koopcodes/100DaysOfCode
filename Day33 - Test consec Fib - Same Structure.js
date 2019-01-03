@@ -30,7 +30,7 @@ function productFib2(prod) {
 	return [fib1, fib2, false];
 }
 
-productFib2(4895); // [ 55, 89, true ]
+productFib2(4894); // [ 55, 89, false ]
 productFib2(5895); // [ 89, 144, false ]
 
 ////////////////////
@@ -47,4 +47,4 @@ Array.prototype.sameStructureAs = function(other) {
 		: false;
 };
 
-console.log([ 1, 1, 1 ].sameStructureAs( [ 2, 2, 2 ] )); 
+console.log([ 1, 1, 1,[2 ,2] ].sameStructureAs( [ 2, 2, 2, [1, 1] ] )); // true

@@ -11,6 +11,7 @@ var countAnimals = (animals, count) => {
 			numArr.push(find.length);
 		} else numArr.push(0);
 	}
+	console.log(numArr);
 	return numArr;
 };
 
