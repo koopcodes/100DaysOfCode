@@ -8,6 +8,8 @@
 // zeros(12) = 2
 // # 12! = 479001600 --> 2 trailing zeros
 // Hint: You're not meant to calculate the factorial. Find another way to find the number of zeros
+// Koop's Hinet: http://mathworld.wolfram.com/images/equations/Factorial/NumberedEquation3.gif
+// Sum of n/5^k from k=1 to k=log5 n
 
 function zeros(n) {
 	var count = 0;
@@ -24,12 +26,12 @@ zeros(42945510); // 10736371
 
 /////ALSO/////
 function zeros2 (n) {
-  var res = 0;
+  var count = 0;
   for(var i=5; i<n; i*=5){
-    res += Math.floor(n/i);
+    count += Math.floor(n/i);
   }
-  console.log(res);
-  return res;
+  console.log(count);
+  return count;
 }
 
 zeros2(390029053); // 97507256
