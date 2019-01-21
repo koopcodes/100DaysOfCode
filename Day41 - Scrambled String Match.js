@@ -48,7 +48,7 @@ function scramble2(str1, str2) {
 			letterCount[str2[j]]--; // Decrement the count value for that letter key in letterCount object
 		} // If the count reaches 0 and is checked again (for example 4 letter 's' in str2 and only 3 's' in str1) it will fail
   }
-  return true; // If the count for all letters in str1 never reaches 0 we have a winner!
+  return true; // If the count for all letters in str2 never exceeds the str1 count then we have a winner!
 }
 
 scramble2('jscripts', 'javascript'); // false
