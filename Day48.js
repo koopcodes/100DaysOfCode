@@ -15,7 +15,7 @@ console.log(domainName("http://google.co.jp")); // google.co.jp
 ////////////////////////////////////////
 
 function domainName2(url) {
-	var urlPattern = /^(?:https?:\/\/)?(?:w{3}\.)?([a-z\d\.-]+)\.(?:[a-z\.]{2,10})(?:[/\w\.-]*)*/;
+	var urlPattern = /^(?:https?:\/\/)?(?:w{3}\.)?([a-z\d\.-]+)\.(?:[a-z\.]{2,10})(?:[\/\w\.-]*)*/;
 	// ^(?:https?:\/\/)? ---> is there an http or https part? don't capture them.
 	// (?:w{3}.)? ---> are there 3 w? don't capture them
 	// ([a-z\d.-]+). ---> the domain name part. Capture it.
@@ -30,7 +30,7 @@ console.log(domainName2("http://google.com"));  // google
 console.log(domainName2("http://google.co.jp")); // google.co
 
 function domainName3(url) {
-	var urlPattern = /^(?:https?:\/\/)?(?:w{3}\.)?([a-z\d\-]+)\.(?:[a-z\.]{2,10})(?:[/\w\.-]*)*/;
+	var urlPattern = /^(?:https?:\/\/)?(?:w{3}\.)?([a-z\d\-]+)\.(?:[a-z\.]{2,10})(?:[\/\w\.-]*)*/;
 	// removed the . after \d\ and before minus. Was ([a-z\d\.-]+)
 
 	var domainPattern = url.match(urlPattern);
@@ -40,3 +40,15 @@ function domainName3(url) {
 
 console.log(domainName3("http://google.com"));  // google
 console.log(domainName3("http://google.co.jp")); // google
+
+/////////////////////////////////
+const regex = /^(?:https?:\/\/)?(?:w{3}\.)?([a-z\d\-]+)\.(?:[a-z\.]{2,10})(?:[\/\w\.-]*)*/;
+const str = `https://www.google.co.uk`;
+let m;
+
+if ((m = regex.exec(str)) !== null) {
+	// The result can be accessed through the `m`-variable.
+	m.forEach((match, groupIndex) => {
+		console.log(`Found match, group ${groupIndex}: ${match}`);
+	});
+}
