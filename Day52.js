@@ -15,4 +15,9 @@ function intersection(list1, list2) {
 	return intersects;
 }
 
-console.log(intersection([1, 2, 2, 3], [2, 2, 3, 4]));
+// console.log(intersection([1, 2, 2, 3], [2, 2, 3, 4]));
+
+function intersection2(list1, list2) {
+	return list1.filter((value) => list2.indexOf(value) !== -1);
+}
+console.log(intersection2([1, 2, 2, 3], [2, 2, 3, 4]));
