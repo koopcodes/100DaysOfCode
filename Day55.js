@@ -8,27 +8,23 @@ var xLengthStart = 0;
 var xLengthEnd = matrix[0].length - 1;
 var yLengthStart = 0;
 var yLengthEnd = matrix.length - 1;
-var result = [];
+var result = "";
 
 function traverseMatrix() {
 
 	for (let i = xLengthStart; i <= xLengthEnd; i++) {
-		// console.log(matrix[yLengthStart][i]);
 		result = result + (matrix[yLengthStart][i]) + ', ';
 	}
 	yLengthStart++;
 	for (let j = yLengthStart; j <= yLengthEnd; j++) {
-		// console.log(matrix[j][xLengthEnd]);
 		result = result + (matrix[j][xLengthEnd]) + ', ';
 	}
 	xLengthEnd--;
 	for (let k = xLengthEnd; k >= xLengthStart; k--) {
-		// console.log(matrix[yLengthEnd][k]);
 		result = result + (matrix[yLengthEnd][k]) + ', ';
 	}
 	yLengthEnd--;
 	for (let m = yLengthEnd; m >= yLengthStart; m--) {
-		// console.log(matrix[m][xLengthStart]);
 		result = result + (matrix[m][xLengthStart]) + ', ';
 	}
 	xLengthStart++;
